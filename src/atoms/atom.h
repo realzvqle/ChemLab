@@ -3,10 +3,6 @@
 
 
 
-
-
-
-
 #include <stdint.h>
 #include <stdbool.h>
 #include "../exheaders/raylib.h"

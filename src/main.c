@@ -10,6 +10,8 @@ int main(){
 
     while(!WindowShouldClose()){
         BeginDrawing();
+        DrawFPS(GetScreenWidth() - 100, GetScreenHeight() - 50);
+        ClearBackground(BLACK);
         Atom atom = AtInitializeAtom(10, 10, 10);
         printf("%d\n", AtGetValenceElectrons(&atom));
 
