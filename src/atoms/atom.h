@@ -11,6 +11,7 @@ typedef struct _element{
     uint8_t protons;
     char* name;
     Color color;
+    uint8_t valence;
 } Element;
 
 typedef struct _atom{
