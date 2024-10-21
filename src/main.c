@@ -1,9 +1,10 @@
 #include "exheaders/raylib.h"
 #include "atoms/atom.h"
 #include <stdio.h>
+#include "UI/ui.h"
 
 
-
+bool active;
 
 int main(){
     SetConfigFlags(FLAG_VSYNC_HINT);
@@ -13,10 +14,18 @@ int main(){
         BeginDrawing();
         DrawFPS(GetScreenWidth() - 100, GetScreenHeight() - 50);
         ClearBackground(BLACK);
-        Atom atom = AtInitializeAtom(5, 10, 10);
-        printf("%d\n", AtGetValenceElectrons(&atom));
-
-        DrawText(atom.element.name, 10, 10, 90, atom.element.color);
+        Rectangle box = {90, 90, 900, 30};
+        char text[512];
+        UiDrawTextBox(box, text, 512,&active, RED);
+        Element elm = AtReturnElementFromElementName(text);
+        if(elm.name == NULL){
+            EndDrawing();
+            continue;
+        } 
+        AtReturnElementNameFromProtonNumber(-1);
+        char buffer[512];
+        sprintf(buffer, "Number: %d -- Valence Electron: %d\n", elm.protons, elm.valence);
+        DrawText(buffer, 90, 90, 20, WHITE);
         EndDrawing();
     }
 }
