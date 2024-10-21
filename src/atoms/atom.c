@@ -91,7 +91,7 @@ Atom AtInitializeAtom(uint8_t protons, uint8_t neutrons, uint8_t electrons){
     return atm;
 }
 
-// scuffed implemnation =(
+// scuffed implemnation, doesn't even work =(
 uint8_t AtGetValenceElectrons(Atom* atom){
     if (atom->electrons <= 2) {
         return atom->electrons;  
