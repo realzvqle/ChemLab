@@ -86,7 +86,7 @@ void UiDrawTextBox(Rectangle box, char *text, int maxLength, bool *active, Color
             int cursorX = box.x + 5 + textWidth;
             int cursorY = box.y + 8;
             if ((GetTime() * 2.0f) - (int)(GetTime() * 2.0f) > 0.5f) {
-                DrawText("    _", cursorX, cursorY, 20, BLACK);
+                DrawText(" _", cursorX, cursorY, 20, BLACK);
             }
         }
     }
